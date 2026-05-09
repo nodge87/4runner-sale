@@ -1,10 +1,11 @@
 <!doctype html>
+<!-- 2001 Toyota 4Runner Limited 4WD — private-sale listing. Editorial '99 design. v3 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2001 Toyota 4Runner Limited 4WD — For Sale</title>
-<meta name="description" content="2001 Toyota 4Runner Limited 4WD. 178k miles. $13,500. Clean title. Southern car for 19 years, undercoated annually since 2020.">
+<meta name="description" content="2001 Toyota 4Runner Limited 4WD. 179k miles. $13,500. Clean title. Southern car for 19 years, undercoated annually since 2020.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -30,7 +31,7 @@
   }
   img{max-width:100%;display:block}
   a{color:var(--oxblood);text-decoration:none;border-bottom:1px solid currentColor}
-  a:hover{opacity:.7}
+  a:not(.lightbox):hover{opacity:.7}
   .container{max-width:1200px;margin:0 auto;padding:0 32px}
   .mono{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
   .serif{font-family:'Playfair Display',serif}
@@ -84,8 +85,8 @@
   .hero-title .subtitle{
     font-family:'Playfair Display',serif;
     font-style:italic;
-    font-weight:400;
-    font-size:clamp(1.15rem,2vw,1.6rem);
+    font-weight:600;
+    font-size:clamp(1.25rem,2.2vw,1.85rem);
     color:#e8dcb8;
     margin:0 0 22px;
     letter-spacing:.005em;
@@ -161,6 +162,32 @@
   .worklist li::before{content:"—  ";color:var(--oxblood);font-weight:700}
   .placeholder{color:var(--muted);font-style:italic}
 
+  /* Lightbox */
+  .lb-trigger{display:block;border:none;cursor:zoom-in}
+  .lb-trigger:hover img{filter:brightness(1.08);transition:filter .15s}
+  .lightbox{
+    display:none;position:fixed;inset:0;
+    background:rgba(0,0,0,.9);
+    z-index:999;
+    align-items:center;justify-content:center;
+    cursor:zoom-out;
+    border:none;text-decoration:none;
+  }
+  .lightbox:target{display:flex}
+  .lightbox img{
+    max-width:92vw;max-height:90vh;
+    object-fit:contain;
+    box-shadow:0 8px 64px rgba(0,0,0,.6);
+    pointer-events:none;
+  }
+  .lightbox-x{
+    position:absolute;top:20px;right:28px;
+    color:#faf6ec;font-size:2rem;
+    font-family:'JetBrains Mono',monospace;
+    opacity:.5;line-height:1;pointer-events:none;
+  }
+  .lightbox:hover .lightbox-x{opacity:.9}
+
   /* Carfax */
   .cta{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px;background:var(--paper);border:1px solid var(--rule);flex-wrap:wrap}
   .cta-btn{
@@ -211,7 +238,7 @@
 
 <header class="masthead">
   <div class="container masthead-inner">
-    <div class="brand">Dunlea &amp; Co. — Private Sale</div>
+    <div class="brand">Private Sale</div>
     <div class="meta">
       <span class="mono">Vol. 01 · Issue 4R</span>
       <span class="mono">Brooklyn, NY</span>
@@ -226,24 +253,22 @@
     <img src="images/hero.jpeg" alt="2001 Toyota 4Runner Limited parked in front of multi-colored shipping containers in Brooklyn" fetchpriority="high">
   </picture>
   <div class="hero-eyebrow">
-    <span>For Sale · Private Owner</span>
-    <span>One Owner Since 2020</span>
+    <span>Current ownership since 2020</span>
   </div>
   <div class="hero-title">
     <h1>2001 Toyota 4Runner</h1>
     <p class="subtitle">Reluctantly for sale.</p>
     <div class="ticker">
-      <span><b>2001</b> · Limited 4WD</span>
-      <span><b>178k</b> miles</span>
+      <span><b>179k</b> miles</span>
       <span><b>$13,500</b></span>
-      <span><b>Clean</b> title</span>
+      <span><b>Available:</b> Late June</span>
     </div>
   </div>
 </section>
 
 <section class="lede">
   <div class="container lede-grid">
-    <p class="dropcap">A 25-year-old Toyota with the bones of a southern car and the soul of a New York commuter — sold by its owner of nineteen years' worth of careful keeping. Below: the spec sheet, the story, the proof.</p>
+    <p class="dropcap">A 25-year-young truck that will probably outlive you. Selling reluctantly due to a move overseas.</p>
     <aside class="specsheet" aria-label="Spec sheet">
       <h3>Spec Sheet</h3>
       <dl>
@@ -252,14 +277,15 @@
         <dt>Model</dt><dd>4Runner</dd>
         <dt>Trim</dt><dd>Limited</dd>
         <dt>Drive</dt><dd>4WD</dd>
-        <dt>Mileage</dt><dd>178,000 mi</dd>
+        <dt>Mileage</dt><dd>179,000 mi</dd>
         <dt>Title</dt><dd>Clean</dd>
-        <dt>Owners</dt><dd>[placeholder]</dd>
-        <dt>VIN</dt><dd>[placeholder]</dd>
+        <dt>Owners</dt><dd>3</dd>
+        <dt>VIN</dt><dd>JT3HN87R410352639</dd>
         <dt>Location</dt><dd>Brooklyn, NY</dd>
+        <dt>Available</dt><dd><strong><em>Late June</em></strong></dd>
       </dl>
       <div class="price">
-        <span class="mono">Asking</span>
+        <span class="mono">Price</span>
         <span class="num">$13,500</span>
       </div>
     </aside>
@@ -272,11 +298,8 @@
     <h2>Nineteen years south,<br><em>five winters north.</em></h2>
     <div class="twocol">
       <div>
-        <p class="placeholder">[Placeholder — your story goes here. A paragraph or two on how you came to own the car, where it lived before you, what you used it for, and why you're letting it go now. The point is to make a buyer feel like they're inheriting something cared for, not closing a transaction.]</p>
-        <p class="placeholder">[Continue with a few specifics — favorite trips, what you've appreciated about the truck, anything quirky a buyer should know up front.]</p>
-      </div>
-      <div>
-        <p class="placeholder">[Optional second column — could be a quote, a fun fact, or context on the Limited trim (heated leather, sunroof, woodgrain dash, the whole turn-of-the-century luxury package on a body-on-frame SUV).]</p>
+        <p>I purchased the truck in Maryland in 2020 where it had spent all of its life. I am the third owner. First owner had it for 17 years and garaged it every night. Second owner traded it into a Honda dealer after 2 years, which is where I got it from. This car has never wanted for anything. Undercoated every winter since coming north.</p>
+        <p>Perfect for bringing the dog to the beach or the park. Great for ski trips. There is nothing this truck can't do.</p>
       </div>
     </div>
   </div>
@@ -288,39 +311,49 @@
     <h2>In its element.</h2>
     <div class="gallery">
       <figure class="full">
-        <picture>
-          <source media="(max-width:768px)" srcset="images/mobile/exterior-side-containers.jpeg">
-          <img src="images/exterior-side-containers.jpeg" alt="Side profile against shipping containers" loading="lazy">
-        </picture>
-        <figcaption>Red Hook, summer — the day this listing was made.</figcaption>
+        <a href="#lb-ext-country" class="lb-trigger">
+          <picture>
+            <source media="(max-width:768px)" srcset="images/mobile/exterior-country.jpeg">
+            <img src="images/exterior-country.jpeg" alt="Front three-quarter in countryside" loading="lazy">
+          </picture>
+        </a>
+        <figcaption>Countryside.</figcaption>
       </figure>
       <figure>
-        <picture>
-          <source media="(max-width:768px)" srcset="images/mobile/exterior-front-three-quarter.jpeg">
-          <img src="images/exterior-front-three-quarter.jpeg" alt="Three-quarter front" loading="lazy">
-        </picture>
+        <a href="#lb-ext-thule" class="lb-trigger">
+          <picture>
+            <source media="(max-width:768px)" srcset="images/mobile/exterior-thule.jpeg">
+            <img src="images/exterior-thule.jpeg" alt="Passenger-side profile with Thule rooftop box" loading="lazy">
+          </picture>
+        </a>
+        <figcaption>Passenger profile · Thule rooftop box.</figcaption>
+      </figure>
+      <figure>
+        <a href="#lb-ext-front3q" class="lb-trigger">
+          <picture>
+            <source media="(max-width:768px)" srcset="images/mobile/exterior-front-three-quarter.jpeg">
+            <img src="images/exterior-front-three-quarter.jpeg" alt="Three-quarter front" loading="lazy">
+          </picture>
+        </a>
         <figcaption>Front three-quarter.</figcaption>
       </figure>
       <figure>
-        <picture>
-          <source media="(max-width:768px)" srcset="images/mobile/exterior-passenger-profile.jpeg">
-          <img src="images/exterior-passenger-profile.jpeg" alt="Passenger-side profile" loading="lazy">
-        </picture>
-        <figcaption>Passenger-side profile.</figcaption>
-      </figure>
-      <figure>
-        <picture>
-          <source media="(max-width:768px)" srcset="images/mobile/exterior-driver-profile.jpeg">
-          <img src="images/exterior-driver-profile.jpeg" alt="Driver-side profile" loading="lazy">
-        </picture>
+        <a href="#lb-ext-driver" class="lb-trigger">
+          <picture>
+            <source media="(max-width:768px)" srcset="images/mobile/exterior-driver-profile.jpeg">
+            <img src="images/exterior-driver-profile.jpeg" alt="Driver-side profile" loading="lazy">
+          </picture>
+        </a>
         <figcaption>Driver-side profile.</figcaption>
       </figure>
       <figure>
-        <picture>
-          <source media="(max-width:768px)" srcset="images/mobile/exterior-front-skyline-1.jpeg">
-          <img src="images/exterior-front-skyline-1.jpeg" alt="Front with city skyline" loading="lazy">
-        </picture>
-        <figcaption>Front, skyline behind.</figcaption>
+        <a href="#lb-ext-skyline" class="lb-trigger">
+          <picture>
+            <source media="(max-width:768px)" srcset="images/mobile/exterior-front-skyline-1.jpeg">
+            <img src="images/exterior-front-skyline-1.jpeg" alt="Front with city skyline" loading="lazy">
+          </picture>
+        </a>
+        <figcaption>Front.</figcaption>
       </figure>
     </div>
   </div>
@@ -331,11 +364,13 @@
     <p class="kicker mono">§ 03 — Interior</p>
     <h2>Tan leather. Woodgrain. <em>Patina you can't fake.</em></h2>
     <figure>
-      <picture>
-        <source media="(max-width:768px)" srcset="images/mobile/interior-cockpit.jpeg">
-        <img src="images/interior-cockpit.jpeg" alt="Tan leather interior with woodgrain dash" loading="lazy">
-      </picture>
-      <figcaption style="margin-top:10px" class="mono">Limited trim · heated leather · power everything · automatic climate</figcaption>
+      <a href="#lb-int-cockpit" class="lb-trigger">
+        <picture>
+          <source media="(max-width:768px)" srcset="images/mobile/interior-cockpit.jpeg">
+          <img src="images/interior-cockpit.jpeg" alt="Tan leather interior with woodgrain dash" loading="lazy">
+        </picture>
+      </a>
+      <figcaption style="margin-top:10px" class="mono">Limited trim · heated leather · power everything · climate control</figcaption>
     </figure>
   </div>
 </section>
@@ -347,35 +382,42 @@
     <div class="provenance">
       <div>
         <p>For the first nineteen years of its life this truck never saw a New England winter. It came north in 2020 and has been undercoated every year since — five winters of Fluid Film, no shortcuts. The undercarriage tells the story.</p>
-        <p class="placeholder">[Placeholder — add the shop name, the product used, and any rust-prevention specifics here.]</p>
       </div>
       <div class="provenance-grid">
         <figure>
-          <picture>
-            <source media="(max-width:768px)" srcset="images/mobile/underside-2020-1.jpeg">
-            <img src="images/underside-2020-1.jpeg" alt="Underside 2020" loading="lazy">
-          </picture>
+          <a href="#lb-2020-1" class="lb-trigger">
+            <picture>
+              <source media="(max-width:768px)" srcset="images/mobile/underside-2020-1.jpeg">
+              <img src="images/underside-2020-1.jpeg" alt="Underside 2020" loading="lazy">
+            </picture>
+          </a>
           <figcaption>2020 — arrival north</figcaption>
         </figure>
         <figure>
-          <picture>
-            <source media="(max-width:768px)" srcset="images/mobile/underside-2025-1.jpeg">
-            <img src="images/underside-2025-1.jpeg" alt="Underside 2025" loading="lazy">
-          </picture>
+          <a href="#lb-2025-1" class="lb-trigger">
+            <picture>
+              <source media="(max-width:768px)" srcset="images/mobile/underside-2025-1.jpeg">
+              <img src="images/underside-2025-1.jpeg" alt="Underside 2025" loading="lazy">
+            </picture>
+          </a>
           <figcaption>2025 — five winters in</figcaption>
         </figure>
         <figure>
-          <picture>
-            <source media="(max-width:768px)" srcset="images/mobile/underside-2025-3.jpeg">
-            <img src="images/underside-2025-3.jpeg" alt="Frame rail" loading="lazy">
-          </picture>
+          <a href="#lb-2025-3" class="lb-trigger">
+            <picture>
+              <source media="(max-width:768px)" srcset="images/mobile/underside-2025-3.jpeg">
+              <img src="images/underside-2025-3.jpeg" alt="Frame rail" loading="lazy">
+            </picture>
+          </a>
           <figcaption>Frame rail, 2025</figcaption>
         </figure>
         <figure>
-          <picture>
-            <source media="(max-width:768px)" srcset="images/mobile/underside-2025-5.jpeg">
-            <img src="images/underside-2025-5.jpeg" alt="Suspension" loading="lazy">
-          </picture>
+          <a href="#lb-2025-5" class="lb-trigger">
+            <picture>
+              <source media="(max-width:768px)" srcset="images/mobile/underside-2025-5.jpeg">
+              <img src="images/underside-2025-5.jpeg" alt="Suspension" loading="lazy">
+            </picture>
+          </a>
           <figcaption>Suspension, 2025</figcaption>
         </figure>
       </div>
@@ -390,29 +432,29 @@
     <div class="worklist">
       <h4>Engine &amp; Drivetrain</h4>
       <ul>
-        <li class="placeholder">[Placeholder — timing belt, water pump, etc.]</li>
-        <li class="placeholder">[Placeholder]</li>
-      </ul>
-      <h4>Suspension &amp; Steering</h4>
-      <ul>
-        <li class="placeholder">[Placeholder — shocks, bushings, tie rods, etc.]</li>
-        <li class="placeholder">[Placeholder]</li>
-      </ul>
-      <h4>Brakes</h4>
-      <ul>
-        <li class="placeholder">[Placeholder — pads, rotors, lines, etc.]</li>
+        <li>Catalytic converters replaced (144k miles)</li>
+        <li>Tailpipe and muffler replaced (144k miles)</li>
+        <li>O2 sensors replaced (144k miles)</li>
+        <li>Alternator replaced (158k miles)</li>
+        <li>Spark plugs replaced (160k miles)</li>
+        <li>Valve cover gasket replaced (160k miles)</li>
       </ul>
       <h4>Cooling &amp; Fluids</h4>
       <ul>
-        <li class="placeholder">[Placeholder — radiator, hoses, ATF, diff fluid, etc.]</li>
+        <li>Oil changed every 5k miles (recently at 177k miles)</li>
+        <li>Transmission fluid changed (143k miles)</li>
+        <li>Transfer case fluid changed (143k miles)</li>
+        <li>Front and rear diff fluids changed (143k miles)</li>
+        <li>Coolant hose replaced (160k miles)</li>
       </ul>
-      <h4>Tires &amp; Wheels</h4>
+      <h4>Tires &amp; Brakes</h4>
       <ul>
-        <li class="placeholder">[Placeholder — brand, size, year, tread depth.]</li>
+        <li>Rotors replaced (148k miles)</li>
+        <li>New tires (158k miles)</li>
       </ul>
       <h4>Body &amp; Interior</h4>
       <ul>
-        <li class="placeholder">[Placeholder]</li>
+        <li>AC re-gassed (170k miles)</li>
       </ul>
     </div>
   </div>
@@ -423,8 +465,8 @@
     <p class="kicker mono">§ 06 — Carfax</p>
     <h2>The full history, on paper.</h2>
     <div class="cta">
-      <p style="margin:0;max-width:60ch;color:var(--muted)">A complete Carfax report is available — clean title, ownership history, and service records. Click through to view the full document.</p>
-      <a class="cta-btn" href="#" aria-label="View Carfax report">View Carfax →</a>
+      <p style="margin:0;max-width:60ch;color:var(--muted)">A complete Carfax report is available — clean title, ownership history, and service records. Click through to purchase the report.</p>
+      <a class="cta-btn" href="https://secure.carfax.com/creditCard.cfx?previousPage=vhrl&amp;vin=JT3HN87R410352639" target="_blank" rel="noopener" aria-label="View Carfax report">View Carfax →</a>
     </div>
   </div>
 </section>
@@ -435,27 +477,31 @@
     <h2>Questions, <em>answered.</em></h2>
     <details>
       <summary>Why are you selling?</summary>
-      <p class="placeholder">[Placeholder answer — be honest and brief.]</p>
+      <p class="placeholder">Moving overseas and I can't take it with me, even though I want to.</p>
     </details>
     <details>
       <summary>Any rust on the frame?</summary>
-      <p class="placeholder">[Placeholder answer — note the southern history, the annual undercoating, and any specific spots a buyer should know about.]</p>
+      <p class="placeholder">No. This is why I was looking for a southern truck when I purchased it. I have undercoated it every year since I have had it in the northeast. 3M the first year, and then Fluid Film every year since then. Take a look at the underside pictures from 2020 (when I purchased it). That is how it looked before I started undercoating it. So there should be no rust hiding behind the undercoating.</p>
     </details>
     <details>
       <summary>What's the most recent service?</summary>
-      <p class="placeholder">[Placeholder answer — date, mileage, what was done.]</p>
+      <p class="placeholder">Oil and filters changed Oct 2025 (177k miles)</p>
     </details>
     <details>
-      <summary>Any accidents or paintwork?</summary>
-      <p class="placeholder">[Placeholder answer.]</p>
+      <summary>Any accidents?</summary>
+      <p class="placeholder">Nope.</p>
     </details>
     <details>
       <summary>Is it a daily driver?</summary>
-      <p class="placeholder">[Placeholder answer — how often you drive it, typical use.]</p>
+      <p class="placeholder">Technically yes, but I do not drive that often. It gets driven at least once a week.</p>
     </details>
     <details>
-      <summary>Can I have my mechanic inspect it?</summary>
-      <p class="placeholder">[Placeholder answer — yes, and where you can meet.]</p>
+      <summary>Is the rear spoiler original?</summary>
+      <p>No, this is a JDM style upgrade I had installed. The truck comes with the original OEM wind deflector if you wish to re-install it.</p>
+    </details>
+    <details>
+      <summary>When is the truck available?</summary>
+      <p>The truck will be available from late June.</p>
     </details>
   </div>
 </section>
@@ -464,7 +510,7 @@
   <div class="container">
     <div class="contact-card">
       <div>
-        <p class="mono" style="color:#c8b48a;margin:0 0 8px">Make an offer</p>
+        <p class="mono" style="color:#c8b48a;margin:0 0 8px">Interested?</p>
         <h2>Reach out.</h2>
       </div>
       <div class="lines">
@@ -481,6 +527,54 @@
     <span>Listing rev. <span class="mono">2026.05</span></span>
   </div>
 </footer>
+
+<!-- Lightbox overlays — click anywhere to close -->
+<a id="lb-ext-country" class="lightbox" href="#" aria-label="Close">
+  <img src="images/exterior-country.jpeg" alt="Front three-quarter in countryside">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-ext-thule" class="lightbox" href="#" aria-label="Close">
+  <img src="images/exterior-thule.jpeg" alt="Passenger-side profile with Thule rooftop box">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-ext-front3q" class="lightbox" href="#" aria-label="Close">
+  <img src="images/exterior-front-three-quarter.jpeg" alt="Three-quarter front">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-ext-driver" class="lightbox" href="#" aria-label="Close">
+  <img src="images/exterior-driver-profile.jpeg" alt="Driver-side profile">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-ext-skyline" class="lightbox" href="#" aria-label="Close">
+  <img src="images/exterior-front-skyline-1.jpeg" alt="Front with city skyline">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-int-cockpit" class="lightbox" href="#" aria-label="Close">
+  <img src="images/interior-cockpit.jpeg" alt="Tan leather interior with woodgrain dash">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-2020-1" class="lightbox" href="#" aria-label="Close">
+  <img src="images/underside-2020-1.jpeg" alt="Underside 2020 — arrival north">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-2025-1" class="lightbox" href="#" aria-label="Close">
+  <img src="images/underside-2025-1.jpeg" alt="Underside 2025 — five winters in">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-2025-3" class="lightbox" href="#" aria-label="Close">
+  <img src="images/underside-2025-3.jpeg" alt="Frame rail, 2025">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+<a id="lb-2025-5" class="lightbox" href="#" aria-label="Close">
+  <img src="images/underside-2025-5.jpeg" alt="Suspension, 2025">
+  <span class="lightbox-x" aria-hidden="true">×</span>
+</a>
+
+<script>
+document.querySelectorAll('.lightbox').forEach(function(lb){
+  lb.addEventListener('click',function(e){ e.preventDefault(); history.back(); });
+});
+</script>
 
 </body>
 </html>
